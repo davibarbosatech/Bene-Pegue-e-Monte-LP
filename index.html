@@ -374,10 +374,10 @@
             font-size: 1.8rem;
         }
         
-        /* ===== GALERIA SECTION ===== */
+        /* ===== GALERIA SECTION ATUALIZADA ===== */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 colunas fixas */
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
             gap: 1.5rem;
         }
 
@@ -948,7 +948,7 @@
             to { opacity: 1; }
         }
         
-        /* ===== RESPONSIVIDADE ===== */
+        /* ===== RESPONSIVIDADE ATUALIZADA ===== */
         @media (max-width: 992px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -1046,12 +1046,14 @@
                 font-size: 1.5rem;
             }
             
+            /* GALERIA MOBILE - 2 COLUNAS LADO A LADO */
             .gallery-grid {
-                grid-template-columns: 1fr; /* 1 coluna em mobile */
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas em mobile */
+                gap: 1rem; /* Espaçamento menor para caber melhor */
             }
             
             .gallery-item {
-                aspect-ratio: 4/3; /* Proporção mais quadrada em mobile */
+                aspect-ratio: 3/4; /* Mantém a proporção vertical */
             }
             
             .testimonial-author {
@@ -1084,6 +1086,23 @@
             .header-container .logo {
                 width: 160px;
                 max-height: 45px;
+            }
+            
+            /* Ajuste adicional para telas muito pequenas */
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            
+            .gallery-item {
+                aspect-ratio: 3/4;
+            }
+        }
+        
+        /* Para telas extremamente pequenas (menos de 360px) */
+        @media (max-width: 360px) {
+            .gallery-grid {
+                grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
             }
         }
     </style>
@@ -1174,6 +1193,7 @@
         </div>
     </section>
 
+    <!-- Resto do código permanece igual -->
     <!-- Como Funciona Section -->
     <section class="section steps" id="como-funciona">
         <div class="container">
